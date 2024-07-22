@@ -1,0 +1,68 @@
+Root-Coordinator
+ {
+  Simulator
+   {
+    Path = Ssim/controller.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = Ssim/train.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = Ssim/gate.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = sinks\to_disk.h
+    Parameters = "outputTrain.txt"
+   }
+  Simulator
+   {
+    Path = sinks\to_disk.h
+    Parameters = "outputGate.txt"
+   }
+  Simulator
+   {
+    Path = sinks\to_disk.h
+    Parameters = "outputGenerador.txt"
+   }
+  Simulator
+   {
+    Path = sinks/gnuplot.h
+    Parameters = 3.000000e+00,"set xrange [0:%tf] @set xlabel 'tiempo' @set ylabel 'salida'  @ set grid @ set title 'Simulation Train- Controller- Gate'","with linespoints title 'train'","with linespoints title 'controller'","with linespoints title 'gate'","",""
+   }
+  Simulator
+   {
+    Path = sinks\to_disk.h
+    Parameters = "outputcontroller.txt"
+   }
+  Simulator
+   {
+    Path = Ssim/initGen.h
+    Parameters = 
+   }
+  EIC
+   {
+   }
+  EOC
+   {
+   }
+  IC
+   {
+    (8,0);(1,0)
+    (1,0);(0,0)
+    (0,0);(2,0)
+    (1,0);(8,0)
+    (1,0);(3,0)
+    (2,0);(4,0)
+    (8,0);(5,0)
+    (1,0);(6,0)
+    (0,0);(6,1)
+    (2,0);(6,2)
+    (0,0);(7,0)
+   }
+ }
